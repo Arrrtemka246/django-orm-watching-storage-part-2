@@ -1,0 +1,7 @@
+.env
+__pycache__/
+*.pyc
+.DS_Storedjango-orm-watching-storage-part-1/
+Без названия/
+django-orm-watching-storage-part-1/
+.DS_Store

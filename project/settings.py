@@ -1,5 +1,12 @@
 import os
 
+from environs import Env
+
+
+env = Env()
+env.read_env()
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
