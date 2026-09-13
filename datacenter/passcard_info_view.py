@@ -1,6 +1,5 @@
-from datacenter.models import (
-    Passcard,
-    Visit,
+from datacenter.models import Passcard, Visit
+from datacenter.visit_calculations import (
     format_duration,
     get_duration,
     is_visit_long,
