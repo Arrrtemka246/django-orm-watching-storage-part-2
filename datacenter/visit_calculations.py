@@ -1,6 +1,10 @@
 from django.utils.timezone import localtime
 
 
+SECONDS_IN_MINUTE = 60
+MINUTES_IN_HOUR = 60
+
+
 def get_duration(visit):
     entered_at = localtime(visit.entered_at)
 
@@ -13,12 +17,20 @@ def get_duration(visit):
 
 
 def format_duration(duration):
-    total_minutes = int(duration.total_seconds() // 60)
-    hours, minutes = divmod(total_minutes, 60)
+    total_minutes = int(
+        duration.total_seconds() // SECONDS_IN_MINUTE
+    )
+    hours, minutes = divmod(
+        total_minutes,
+        MINUTES_IN_HOUR,
+    )
 
     return f'{hours}ч {minutes}мин'
 
 
-def is_visit_long(visit, minutes=60):
+def is_visit_long(visit, minutes=MINUTES_IN_HOUR):
     duration = get_duration(visit)
-    return duration.total_seconds() > minutes * 60
+    return (
+        duration.total_seconds()
+        > minutes * SECONDS_IN_MINUTE
+    )
