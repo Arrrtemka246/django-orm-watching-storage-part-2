@@ -5,3 +5,6 @@ __pycache__/
 Без названия/
 django-orm-watching-storage-part-1/
 .DS_Store
+.replit
+poetry.lock
+pyproject.toml
